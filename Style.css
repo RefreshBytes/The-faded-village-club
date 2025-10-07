@@ -624,3 +624,129 @@ footer::before {
         padding: 20px;
     }
 }
+
+.game-embed-section {
+    margin: 40px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.embed-container {
+    background: rgba(10, 0, 0, 0.9);
+    border: 2px solid var(--blood-red);
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 0 40px rgba(139, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.embed-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--glitch-blue), transparent);
+    animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.embed-header {
+    background: linear-gradient(to right, var(--dark-red), #3a0000);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--blood-red);
+}
+
+.embed-title {
+    font-family: 'Special Elite', cursive;
+    color: var(--pale-pink);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+.embed-status {
+    background: var(--blood-red);
+    color: white;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-family: 'Special Elite', cursive;
+    border: 1px solid var(--pale-pink);
+}
+
+.embed-content {
+    padding: 0;
+    position: relative;
+}
+
+.embed-content iframe {
+    width: 100%;
+    border: none;
+    filter: sepia(0.3) hue-rotate(330deg) contrast(1.1);
+    transition: filter 0.3s ease;
+}
+
+.embed-content:hover iframe {
+    filter: sepia(0) hue-rotate(0deg) contrast(1.2);
+}
+
+.embed-footer {
+    background: rgba(26, 0, 0, 0.9);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--blood-red);
+}
+
+.platforms {
+    color: #ccc;
+    font-size: 0.9rem;
+    font-family: 'Special Elite', cursive;
+    letter-spacing: 1px;
+}
+
+.embed-play-button {
+    background: linear-gradient(to bottom, var(--dark-red), #3a0000);
+    color: var(--pale-pink);
+    padding: 10px 25px;
+    text-decoration: none;
+    font-family: 'Special Elite', cursive;
+    border: 1px solid var(--blood-red);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.embed-play-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.embed-play-button:hover {
+    background: linear-gradient(to bottom, #5a0000, var(--dark-red));
+    border-color: var(--glitch-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
+}
+
+.embed-play-button:hover::before {
+    left: 100%;
+}
