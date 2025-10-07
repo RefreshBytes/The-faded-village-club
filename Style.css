@@ -39,7 +39,6 @@ body::before {
     pointer-events: none;
 }
 
-/* Header */
 #main-header {
     background: linear-gradient(to bottom, #1a0000, #0a0a0a);
     color: var(--pale-pink);
@@ -81,7 +80,6 @@ body::before {
     background: linear-gradient(90deg, transparent, var(--pale-pink), transparent);
 }
 
-/* Hero Section */
 #hero-section {
     text-align: center;
     padding: 80px 20px;
@@ -183,7 +181,6 @@ body::before {
     opacity: 0.5;
 }
 
-/* Download Button */
 .download-button {
     display: inline-block;
     margin-top: 40px;
@@ -224,7 +221,6 @@ body::before {
     left: 100%;
 }
 
-/* Description Section */
 #description {
     max-width: 800px;
     margin: 60px auto;
@@ -262,7 +258,6 @@ body::before {
     border-left: 1px solid rgba(139, 0, 0, 0.3);
 }
 
-/* Characters Section */
 #characters {
     max-width: 1000px;
     margin: 60px auto;
@@ -386,7 +381,6 @@ body::before {
     font-size: 10px !important;
 }
 
-/* Footer */
 footer {
     background: linear-gradient(to top, #1a0000, #0a0a0a);
     color: var(--pale-pink);
@@ -413,7 +407,6 @@ footer::before {
     color: #888;
 }
 
-/* Efek Glitch */
 .glitch-active {
     animation: glitch 0.3s infinite;
 }
@@ -483,7 +476,6 @@ footer::before {
     50% { border-color: var(--blood-red) }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     #game-title {
         font-size: 2.5rem;
@@ -507,7 +499,6 @@ footer::before {
     }
 }
 
-/* Features Section */
 #features {
     max-width: 1000px;
     margin: 60px auto;
@@ -586,7 +577,6 @@ footer::before {
     line-height: 1.5;
 }
 
-/* Medical-themed adjustments */
 .character-card h4 {
     position: relative;
     padding-bottom: 8px;
@@ -603,7 +593,6 @@ footer::before {
     background: var(--blood-red);
 }
 
-/* Enhanced glitch effects for medical theme */
 @keyframes heartbeat {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -614,7 +603,6 @@ footer::before {
     animation: heartbeat 2s ease-in-out infinite;
 }
 
-/* Medical monitor effect */
 .monitor-line {
     position: fixed;
     top: 0;
@@ -627,7 +615,6 @@ footer::before {
     pointer-events: none;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .features-grid {
         grid-template-columns: 1fr;
