@@ -1,0 +1,639 @@
+:root {
+    --blood-red: #8b0000;
+    --dark-red: #5a0000;
+    --pale-pink: #ffd6e0;
+    --glitch-blue: #00ffff;
+    --glitch-pink: #ff00ff;
+    --paper: #f5f5f0;
+    --ink: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    background-color: #0a0a0a;
+    color: var(--pale-pink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(139, 0, 0, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 0, 0.03) 0%, transparent 20%);
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238b0000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header */
+#main-header {
+    background: linear-gradient(to bottom, #1a0000, #0a0a0a);
+    color: var(--pale-pink);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--blood-red);
+    position: relative;
+    overflow: hidden;
+}
+
+#main-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
+}
+
+#main-header h1 {
+    font-family: 'Special Elite', cursive;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--pale-pink);
+    text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+}
+
+#main-header h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--pale-pink), transparent);
+}
+
+/* Hero Section */
+#hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 3.5rem;
+    color: var(--pale-pink);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    text-shadow: 2px 2px 0px var(--blood-red);
+}
+
+#game-title::before, #game-title::after {
+    content: "▮";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--blood-red);
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+#game-title::before {
+    left: -40px;
+}
+
+#game-title::after {
+    right: -40px;
+}
+
+#character-display {
+    margin: 40px 0;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 1px solid var(--blood-red);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
+    overflow: hidden;
+    background: #1a0000;
+}
+
+.character-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--pale-pink);
+    font-family: 'Special Elite', cursive;
+    background: linear-gradient(45deg, #1a0000, #3a0000);
+    transition: all 0.5s;
+}
+
+#character-display:hover .character-placeholder {
+    filter: sepia(100%) hue-rotate(300deg) saturate(500%);
+    transform: scale(1.05);
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--pale-pink);
+    margin: 30px 0;
+    max-width: 600px;
+    position: relative;
+    padding: 20px;
+    border-left: 2px solid var(--blood-red);
+    background: rgba(139, 0, 0, 0.1);
+    text-align: left;
+}
+
+.tagline::before {
+    content: """;
+    font-size: 3rem;
+    color: var(--blood-red);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    opacity: 0.5;
+}
+
+.tagline::after {
+    content: """;
+    font-size: 3rem;
+    color: var(--blood-red);
+    position: absolute;
+    bottom: -30px;
+    right: 10px;
+    opacity: 0.5;
+}
+
+/* Download Button */
+.download-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 40px;
+    background: linear-gradient(to bottom, var(--dark-red), #3a0000);
+    color: var(--pale-pink);
+    text-decoration: none;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.2rem;
+    border-radius: 0;
+    border: 1px solid var(--blood-red);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.3);
+}
+
+.download-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.download-button:hover {
+    background: linear-gradient(to bottom, #5a0000, var(--dark-red));
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+    transform: translateY(-3px);
+}
+
+.download-button:hover::before {
+    left: 100%;
+}
+
+/* Description Section */
+#description {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+#description h3 {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.8rem;
+    color: var(--pale-pink);
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#description h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: var(--blood-red);
+}
+
+#description p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    text-align: justify;
+    position: relative;
+    padding-left: 20px;
+    border-left: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+/* Characters Section */
+#characters {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+#characters h3 {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.8rem;
+    color: var(--pale-pink);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#characters h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: var(--blood-red);
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.character-card {
+    background: rgba(26, 0, 0, 0.5);
+    border: 1px solid var(--blood-red);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.character-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--blood-red);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+}
+
+.character-card:hover::before {
+    transform: scaleX(1);
+}
+
+.character-card h4 {
+    font-family: 'Special Elite', cursive;
+    color: var(--pale-pink);
+    margin: 15px 0 10px;
+    font-size: 1.2rem;
+}
+
+.character-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.character-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--blood-red);
+    position: relative;
+}
+
+.character-placeholder-small {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    transition: transform 0.5s;
+}
+
+.character-card:hover .character-placeholder-small {
+    transform: scale(1.1);
+}
+
+.sari {
+    background: linear-gradient(45deg, #ff6b6b, #8b0000);
+}
+
+.maya {
+    background: linear-gradient(45deg, #45b7d1, #004a6d);
+}
+
+.lina {
+    background: linear-gradient(45deg, #96ceb4, #005a36);
+}
+
+.nina {
+    background: linear-gradient(45deg, #ff9ff3, #8b008b);
+}
+
+.rhea {
+    background: linear-gradient(45deg, #ff69b4, #8b0000);
+    font-size: 10px !important;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to top, #1a0000, #0a0a0a);
+    color: var(--pale-pink);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-top: 1px solid var(--blood-red);
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
+}
+
+.footer-subtext {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Efek Glitch */
+.glitch-active {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        filter: hue-rotate(0deg) brightness(100%);
+        transform: translate(0);
+    }
+    10% {
+        filter: hue-rotate(90deg) brightness(150%);
+        transform: translate(-2px, 2px);
+    }
+    20% {
+        filter: hue-rotate(180deg) brightness(100%);
+        transform: translate(2px, -2px);
+    }
+    30% {
+        filter: hue-rotate(270deg) brightness(150%);
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        filter: hue-rotate(0deg) brightness(100%);
+        transform: translate(2px, -2px);
+    }
+    50% {
+        filter: hue-rotate(90deg) brightness(150%);
+        transform: translate(-2px, 2px);
+    }
+    60% {
+        filter: hue-rotate(180deg) brightness(100%);
+        transform: translate(2px, -2px);
+    }
+    70% {
+        filter: hue-rotate(270deg) brightness(150%);
+        transform: translate(-2px, 2px);
+    }
+    80% {
+        filter: hue-rotate(0deg) brightness(100%);
+        transform: translate(2px, -2px);
+    }
+    90% {
+        filter: hue-rotate(90deg) brightness(150%);
+        transform: translate(-2px, 2px);
+    }
+    100% {
+        filter: hue-rotate(0deg) brightness(100%);
+        transform: translate(0);
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--blood-red);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--blood-red) }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #game-title {
+        font-size: 2.5rem;
+    }
+    
+    #character-display {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .character-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    #game-title::before, #game-title::after {
+        display: none;
+    }
+}
+
+/* Features Section */
+#features {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+#features h3 {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.8rem;
+    color: var(--pale-pink);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#features h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: var(--blood-red);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: rgba(26, 0, 0, 0.5);
+    border: 1px solid var(--blood-red);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--blood-red);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card h4 {
+    font-family: 'Special Elite', cursive;
+    color: var(--pale-pink);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* Medical-themed adjustments */
+.character-card h4 {
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.character-card h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background: var(--blood-red);
+}
+
+/* Enhanced glitch effects for medical theme */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+/* Medical monitor effect */
+.monitor-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--glitch-blue), transparent);
+    opacity: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+}
