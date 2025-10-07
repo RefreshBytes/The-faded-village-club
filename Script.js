@@ -84,19 +84,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-    const downloadButton = document.querySelector('.download-button');
-    downloadButton.addEventListener('mouseenter', () => {
-        downloadButton.style.letterSpacing = '3px';
-        downloadButton.style.background = 'linear-gradient(to bottom, var(--dark-red), #002a3a)';
-        downloadButton.style.borderColor = 'var(--glitch-blue)';
+const embedContainer = document.querySelector('.embed-container');
+if (embedContainer) {
+    embedContainer.addEventListener('mouseenter', () => {
+        embedContainer.style.boxShadow = '0 0 50px rgba(139, 0, 0, 0.8)';
+        embedContainer.style.borderColor = 'var(--glitch-blue)';
     });
     
-    downloadButton.addEventListener('mouseleave', () => {
-        downloadButton.style.letterSpacing = '1px';
-        downloadButton.style.background = 'linear-gradient(to bottom, var(--dark-red), #3a0000)';
-        downloadButton.style.borderColor = 'var(--blood-red)';
+    embedContainer.addEventListener('mouseleave', () => {
+        embedContainer.style.boxShadow = '0 0 40px rgba(139, 0, 0, 0.6)';
+        embedContainer.style.borderColor = 'var(--blood-red)';
     });
+}
+
+const embedPlayButton = document.querySelector('.embed-play-button');
+if (embedPlayButton) {
+    embedPlayButton.addEventListener('mouseenter', () => {
+        embedPlayButton.style.letterSpacing = '2px';
+    });
+    
+    embedPlayButton.addEventListener('mouseleave', () => {
+        embedPlayButton.style.letterSpacing = '1px';
+    });
+}
 
 
     setTimeout(typeWriterEffect, 1000);
